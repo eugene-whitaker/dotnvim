@@ -1,12 +1,12 @@
 -- [[ Setting Options ]]
--- See `:help vim.opt :help option-list`
+-- See `:help vim.opt` and `:help option-list`
 
 -- Set relative line number
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Set mouse support to all modes
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Unset show mode
 vim.opt.showmode = false
@@ -14,7 +14,7 @@ vim.opt.showmode = false
 -- Set clipboard to sync between OS and Neovim
 -- See `:help clipboard`
 vim.schedule(function()
-    vim.opt.clipboard = 'unnamedplus'
+    vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Set break indent
@@ -28,7 +28,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Set draw signcolumn to always
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -41,12 +41,12 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Set display for whitespace characters
--- See `:help list :help listchars`
+-- See `:help list` and `:help listchars`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Set substitutions previews
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Set show the line the cursor is on
 vim.opt.cursorline = true
@@ -57,3 +57,6 @@ vim.opt.scrolloff = 10
 -- Set tab size
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+
+-- Unset word wrap
+vim.opt.wrap = false
