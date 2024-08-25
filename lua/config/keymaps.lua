@@ -1,14 +1,14 @@
 -- [[ Setting Keymaps ]]
 -- See `:help vim.keymap.set`
 
--- Set highlights on serach when pressing <ESC> in normal mode
+-- Set clear highlights on serach when pressing <ESC> in normal mode
 -- See `:help hlsearch`
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<ENTER>")
 
 -- Set diagnostic keymaps
 vim.keymap.set("n", "<LEADER>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix List" })
 
--- Set exit terminal mode
+-- Set exit terminal mode keymaps
 vim.keymap.set("n", "<ESC><ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Unset arrow keys
@@ -17,7 +17,7 @@ vim.keymap.set("n", "<RIGHT>", '<CMD>echo "use l to move right"<ENTER>')
 vim.keymap.set("n", "<UP>", '<CMD>echo "use k to move up"<ENTER>')
 vim.keymap.set("n", "<DOWN>", '<CMD>echo "use j to move down"<ENTER>')
 
--- Set split navigation
+-- Set split navigation keymaps
 -- See `:help wincmd`
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })

@@ -5,7 +5,10 @@ return {
     dependencies = {
         {
             "L3MON4D3/LuaSnip",
-            build = "make install_jsregexp",
+            build = "make nstall_jsregexp",
+            cond = function()
+                return vim.fn.executable("make") == 1
+            end,
             dependencies = {
                 "rafamadriz/friendly-snippets",
                 config = function()
@@ -33,17 +36,25 @@ return {
 
             -- See `:help ins-completion`
             mapping = cmp.mapping.preset.insert({
+                -- select the [N]ext item
                 ["<C-n>"] = cmp.mapping.select_next_item(),
+                -- select the [P]revious item
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
+                -- scroll documentation window [B]ackward
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                -- scroll documentation window [F]orward
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                -- accept ([Y]es) the completion
+                ["<TAB>"] = cmp.mapping.confirm({ select = true }),
+                -- manually trigger completion
                 ["<C-SPACE>"] = cmp.mapping.complete({}),
+                -- move forward over expansion locations
                 ["<C-l>"] = cmp.mapping(function()
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
                     end
                 end, { "i", "s" }),
+                -- move backward over expansion locations
                 ["<C-h>"] = cmp.mapping(function()
                     if luasnip.locally_jumpable(-1) then
                         luasnip.jump(-1)
@@ -53,6 +64,7 @@ return {
             sources = {
                 {
                     name = "lazydev",
+                    -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
                     group_index = 0,
                 },
                 { name = "nvim_lsp" },

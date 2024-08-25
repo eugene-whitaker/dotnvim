@@ -29,7 +29,7 @@ return {
                 map("<LEADER>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
                 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-                -- Highlight references under cursor when cursor is at rest
+                -- highlight references under cursor when cursor is at rest
                 -- See `:help CursorHold`
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_decumentHighlight) then
@@ -79,6 +79,7 @@ return {
                         completion = {
                             callSnippet = "Replace",
                         },
+                        -- diagnostics = { disable = { 'missing-fields' } },
                     },
                 },
             },
@@ -88,7 +89,7 @@ return {
 
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
-            "stylua",
+            "stylua", -- used to format Lua code
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

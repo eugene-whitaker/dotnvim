@@ -1,4 +1,6 @@
--- Set <SPACE> as the leader key
+-- See `:help lua-guide`
+
+-- Set leader key to <SPACE>
 -- See `:help mapleader`
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -29,19 +31,31 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- [[ Configure and install plugins ]]
 -- See `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
 require("lazy").setup({
-    require("plugins.vim-sleuth"),
-    require("plugins.gitsigns"),
-    require("plugins.which-key"),
-    require("plugins.telescope"),
-    require("plugins.lazydev"),
-    require("plugins.luvit-meta"),
-    require("plugins.nvim-lspconfig"),
-    require("plugins.conform"),
-    require("plugins.nvim-cmp"),
-    require("plugins.tokyonight"),
-    require("plugins.todo-comments"),
-    require("plugins.mini"),
-    require("plugins.nvim-treesitter"),
+    spec = {
+        { import = "plugins" },
+    },
+}, {
+    ui = {
+        icons = vim.g.have_nerd_font and {} or {
+            cmd = "⌘",
+            config = "⚒",
+            event = "",
+            ft = "",
+            init = "",
+            keys = "",
+            plugin = "",
+            runtime = "",
+            require = "",
+            source = "",
+            start = "",
+            task = "",
+            lazy = "",
+        },
+    },
 })
+
+-- See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et

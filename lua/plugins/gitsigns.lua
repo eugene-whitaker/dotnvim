@@ -1,4 +1,4 @@
--- Plugin to add git related signs to the gutter, as well as utilities for managing changes
+-- Plugin to add git related icons to the gutter
 -- See `:help gitsigns`
 return {
     "lewis6991/gitsigns.nvim",

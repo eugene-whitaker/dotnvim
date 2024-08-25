@@ -48,7 +48,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Set substitutions previews
 vim.opt.inccommand = "split"
 
--- Set show the line the cursor is on
+-- Set show cursor line
 vim.opt.cursorline = true
 
 -- Set number of lines to keep above and below the cursor

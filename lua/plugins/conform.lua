@@ -1,4 +1,6 @@
 -- Plugin for autoformat
+-- Configured to load on 'BufWritePre' event
+-- See `:help autocmd-events`
 return {
     "stevearc/conform.nvim",
     event = "BufWritePre",

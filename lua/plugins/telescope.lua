@@ -1,4 +1,6 @@
 -- Plugin to fuzzy find files
+-- Configured to load on 'VimEnter' event
+-- See `:help autocmd-events`
 return {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
@@ -49,6 +51,7 @@ return {
             }))
         end, { desc = "[/] Search Current Buffer" })
 
+        -- See `:help telescope.builtin.live_grep()`
         vim.keymap.set("n", "<LEADER>s/", function()
             builtin.live_grep({
                 grep_open_files = true,
@@ -56,6 +59,7 @@ return {
             })
         end, { desc = "[S]earch [/] in Open Files" })
 
+        -- search Neovim configuraiton files
         vim.keymap.set("n", "<LEADER>sn", function()
             builtin.find_files({
                 cwd = vim.fn.stdpath("config"),
