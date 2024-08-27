@@ -33,16 +33,16 @@ return {
                 -- See `:help CursorHold`
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_decumentHighlight) then
-                    local cursor_hold_augroup = vim.api.nvim_create_augroup("cursor-hold", { clear = false })
+                    local cursor_augroup = vim.api.nvim_create_augroup("cursor", { clear = false })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
                         buffer = event.buf,
-                        group = cursor_hold_augroup,
+                        group = cursor_augroup,
                         callback = vim.lsp.buf.document_highlight,
                     })
 
                     vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
                         buffer = event.buf,
-                        group = cursor_hold_augroup,
+                        group = cursor_augroup,
                         callback = vim.lsp.buf.clear_references,
                     })
 

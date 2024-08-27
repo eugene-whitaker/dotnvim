@@ -8,6 +8,9 @@ vim.g.maplocalleader = " "
 -- Unset Nerd Font support
 vim.g.have_nerd_font = false
 
+-- Unset Go recommended styles
+vim.g.go_recommended_style = false
+
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
@@ -58,4 +61,4 @@ require("lazy").setup({
 })
 
 -- See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=8 sts=-1 et sw=4
