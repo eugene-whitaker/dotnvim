@@ -50,7 +50,7 @@ return {
                         group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
                         callback = function(subevent)
                             vim.lsp.buf.clear_references()
-                            vim.api.nvim_clear_autocmds({ group = "cursor-hold", buffer = subevent.buf })
+                            vim.api.nvim_clear_autocmds({ group = "cursor", buffer = subevent.buf })
                         end,
                     })
                 end

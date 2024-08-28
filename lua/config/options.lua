@@ -55,6 +55,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Set tab size
+vim.opt.tabstop = 8
 vim.opt.softtabstop = -1
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
