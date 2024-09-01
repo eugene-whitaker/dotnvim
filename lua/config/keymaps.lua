@@ -6,7 +6,7 @@
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<ENTER>")
 
 -- Set diagnostic keymaps
-vim.keymap.set("n", "<LEADER>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix List" })
+vim.keymap.set("n", "<LEADER>q", vim.diagnostic.setloclist, { desc = "Open Diagnostic [Q]uickfix List" })
 
 -- Set exit terminal mode keymaps
 vim.keymap.set("n", "<ESC><ESC>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

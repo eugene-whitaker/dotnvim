@@ -45,7 +45,7 @@ return {
                 -- scroll documentation window [F]orward
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 -- accept ([Y]es) the completion
-                ["<TAB>"] = cmp.mapping.confirm({ select = true }),
+                ["<ENTER>"] = cmp.mapping.confirm({ select = true }),
                 -- manually trigger completion
                 ["<C-SPACE>"] = cmp.mapping.complete({}),
                 -- move forward over expansion locations
